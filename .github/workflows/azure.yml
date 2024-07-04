@@ -1,1 +1,20 @@
-
+name: Azure action
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+    steps:
+    - uses: action/checkout@v2
+    - name: Set up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint python
+      run: |
+        make lint
+    - name: Test with Pytest
+      run: |
+        make test
