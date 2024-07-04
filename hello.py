@@ -9,4 +9,4 @@ def add(x, y):
 # bien hecho para el lint
 
 result = (1, 2)
-print(f"result sum: {result}")
+print("result sum: %s" % result)
